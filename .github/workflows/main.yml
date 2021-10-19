@@ -33,8 +33,7 @@ jobs:
           # relative path to the place where source code with
           context: ./simple-api
           # Note: tags has to be all lower-case
-          tags:
-            ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:simple-api
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:simple-api
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main'}}
       - name: Build image and push database
@@ -44,8 +43,7 @@ jobs:
           # relative path to the place where source code with
           context: ./database
           # Note: tags has to be all lower-case
-          tags:
-            ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:database
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:database
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main'}}
       - name: Build image and push httpd
@@ -55,7 +53,6 @@ jobs:
           # relative path to the place where source code with
           context: ./httpd
           # Note: tags has to be all lower-case
-          tags:
-            ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:httpd
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:httpd
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main'}}
